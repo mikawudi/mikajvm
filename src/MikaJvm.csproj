@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AAB4F47E-69CE-475A-9B2D-E93B0F5F8AE7}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MikaJvm</RootNamespace>
+    <AssemblyName>MikaJvm</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ByteCodes\ByteCodeTag.cs" />
+    <Compile Include="ByteCodes\Nop.cs" />
+    <Compile Include="JavaFile\AttrInfo.cs" />
+    <Compile Include="JavaFile\AttrInfos\CodeAttr.cs" />
+    <Compile Include="JavaFile\AttrInfos\ConstanValueAttr.cs" />
+    <Compile Include="JavaFile\AttrInfos\LineNumAttr.cs" />
+    <Compile Include="JavaFile\ConstantInfo.cs" />
+    <Compile Include="JavaFile\ConstantInfos\Class_CP.cs" />
+    <Compile Include="JavaFile\ConstantInfos\Double_CP.cs" />
+    <Compile Include="JavaFile\ConstantInfos\FieldRef_CP.cs" />
+    <Compile Include="JavaFile\ConstantInfos\Float_CP.cs" />
+    <Compile Include="JavaFile\ConstantInfos\Integer_CP.cs" />
+    <Compile Include="JavaFile\ConstantInfos\InterfaceMethodref_CP.cs" />
+    <Compile Include="JavaFile\ConstantInfos\Long_CP.cs" />
+    <Compile Include="JavaFile\ConstantInfos\MethodRef_CP.cs" />
+    <Compile Include="JavaFile\ConstantInfos\NameAndType_CP.cs" />
+    <Compile Include="JavaFile\ConstantInfos\String_CP.cs" />
+    <Compile Include="JavaFile\ConstantInfos\UTF8_CP.cs" />
+    <Compile Include="JavaFile\CP_TYPE.cs" />
+    <Compile Include="JavaFile\JavaClassFile.cs" />
+    <Compile Include="JavaFile\MemberInfo.cs" />
+    <Compile Include="JavaRTMethodArea\LocalVars.cs" />
+    <Compile Include="JavaRTMethodArea\JavaClass.cs" />
+    <Compile Include="JavaRTMethodArea\JavaField.cs" />
+    <Compile Include="JavaRTMethodArea\JavaMember.cs" />
+    <Compile Include="JavaRTMethodArea\JavaMethod.cs" />
+    <Compile Include="JavaRTMethodArea\JavaObject.cs" />
+    <Compile Include="JavaRTMethodArea\RTConstantInfo\ClassRef.cs" />
+    <Compile Include="JavaRTMethodArea\RTConstantInfo\FieldRef.cs" />
+    <Compile Include="JavaRTMethodArea\RTConstantInfo\InterfaceRef.cs" />
+    <Compile Include="JavaRTMethodArea\RTConstantInfo\Literal.cs" />
+    <Compile Include="JavaRTMethodArea\RTConstantInfo\MemberRef.cs" />
+    <Compile Include="JavaRTMethodArea\RTConstantInfo\MethodRef.cs" />
+    <Compile Include="JavaRTMethodArea\RTConstantInfo\RuntimeConstantInfo.cs" />
+    <Compile Include="JavaRTMethodArea\RTConstantInfo\RuntimeConstantPools.cs" />
+    <Compile Include="JavaRTMethodArea\RTConstantInfo\SymbolicRef.cs" />
+    <Compile Include="JavaRTMethodArea\Slot.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="JavaRTData\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
